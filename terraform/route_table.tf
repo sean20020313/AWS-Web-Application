@@ -4,8 +4,8 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "my-project-public-rt"
-    Environment = "dev"
+    Name        = "${var.project_name}-public-rt"
+    Environment = var.environment
   }
 }
 
@@ -33,8 +33,8 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name        = "my-project-private-rt"
-    Environment = "dev"
+    Name        = "${var.project_name}-private-rt"
+    Environment = var.environment
   }
 }
 
