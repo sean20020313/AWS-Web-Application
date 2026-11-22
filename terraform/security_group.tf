@@ -12,3 +12,9 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "ec2"{
+  name = "{var.project_name}-ec2-sg"
+  description = "Security Group for ec2"
+  vpc_id = aws_vpc.main.id
+} 
